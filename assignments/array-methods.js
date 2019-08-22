@@ -89,16 +89,16 @@ console.log("Donations tallied up", ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1 - Display Last Name then First name
-let fullNames = [];
+let fullNames1 = [];
 runners.forEach(function(firstLast) {
-  fullNames.push(firstLast.last_name + " " + firstLast.first_name);
+  fullNames1.push(firstLast.last_name + " " + firstLast.first_name);
 })
 // Problem 2 - First names to lower case
-let firstNamesAllCaps = [];
+let firstNamesAllCaps2 = [];
 runners.map(function(makeAllCaps) {
-  firstNamesAllCaps.push(makeAllCaps.first_name.toLowerCase());
+  firstNamesAllCaps2.push(makeAllCaps.first_name.toLowerCase());
 })
 // Problem 3 - Notify runners with 'S' shirts of a small delay in shipment
-let runnersLargeSizeShirt = runners.filter((runner) => {
+let runnersLargeSizeShirt1 = runners.filter((runner) => {
   return runner.shirt_size === 'S';
 })
