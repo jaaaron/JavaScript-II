@@ -50,26 +50,28 @@ last(items, function(last) {
 })
 
 function sumNums(x, y, cb) {
-  return (x + y);// sumNums adds two numbers (x, y) and passes the result to the callback.
+  let results = x + y;// sumNums adds two numbers (x, y) and passes the result to the callback.
+  cb(results);
 }
-console.log(sumNums(5,5, sumNums));
+sumNums(5,5,function(sum){
+  console.log(sum);
+});
 
 function multiplyNums(x, y, cb) {
-  return (x * y);// multiplyNums multiplies two numbers and passes the result to the callback.
+  let results1 = (x * y);
+  cb(results1);// multiplyNums multiplies two numbers and passes the result to the callback.
 }
-console.log(multiplyNums(5,5,multiplyNums));
+multiplyNums(5,5,function(sum) {
+  console.log(sum);
+})
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  if (list.includes(item) === true) {
-    return true
-  } else {
-    return false
-  }
+  return cb(list.find(listItem => item === listItem) ? true : false)
 }
-console.log(contains("Pencil", items));
-console.log(contains("Hamburger", items));
+contains('Pencil', items, found => console.log(found));
+contains('eraser', items, found => console.log(found));
 
 
 /* STRETCH PROBLEM */
